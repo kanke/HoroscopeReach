@@ -10,7 +10,6 @@ const Admin = {
   seeOutcome: Fun([UInt], Null),
 };
 
-
 export const main = Reach.App(() => {
   const Alice = Participant('Alice', {
     ...Player,
@@ -24,5 +23,7 @@ export const main = Reach.App(() => {
   Alice.only(() => {
     const handAlice = declassify(interact.getHand());
   });
+
   Alice.publish(handAlice);
   commit();
+});
